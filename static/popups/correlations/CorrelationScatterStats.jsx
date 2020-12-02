@@ -30,10 +30,11 @@ class CorrelationScatterStats extends React.Component {
     if (_.isEmpty(stats)) {
       return null;
     }
-    const { pearson, spearman, correlated } = stats;
+    const { pearson, spearman, pps, correlated } = stats;
     let i = 0;
     const pearsonInfo = [<dt key={i++}>Pearson</dt>, <dd key={i++}>{corrUtils.percent(pearson)}</dd>];
     const spearmanInfo = [<dt key={i++}>Spearman</dt>, <dd key={i++}>{corrUtils.percent(spearman)}</dd>];
+    const ppsInfo = [<dt key={i++}>PPS</dt>, <dd key={i++}>{corrUtils.percent(pps)}</dd>];
     return [
       <div key={0} className="pt-5">
         <dl className="property-pair inline">
@@ -41,6 +42,7 @@ class CorrelationScatterStats extends React.Component {
         </dl>
         <dl className="property-pair inline">{pearsonInfo}</dl>
         <dl className="property-pair inline">{spearmanInfo}</dl>
+        <dl className="property-pair inline">{ppsInfo}</dl>
         <dl className="property-pair inline">
           <dt>Correlated</dt>
           <dd>{correlated}</dd>

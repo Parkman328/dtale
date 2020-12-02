@@ -56,7 +56,7 @@ class ReactDataViewerMenu extends React.Component {
       <div
         className="column-toggle__dropdown"
         hidden={!menuOpen}
-        style={{ minWidth: "11em", top: "1em", left: "0.5em" }}>
+        style={{ minWidth: "13.5em", top: "1em", left: "0.5em" }}>
         {menuOpen && <GlobalHotKeys keyMap={{ CLOSE_MENU: "esc" }} handlers={{ CLOSE_MENU: closeMenu }} />}
         <header className="title-font">D-TALE</header>
         <ul>
@@ -98,6 +98,15 @@ class ReactDataViewerMenu extends React.Component {
               </button>
             </span>
             <div className="hoverable__content menu-description">{Descriptions.corr}</div>
+          </li>
+          <li className="hoverable">
+            <span className="toggler-action">
+              <button className="btn btn-plain" onClick={openTab("pps")}>
+                <i className="ico-bubble-chart" />
+                <span className="font-weight-bold">Predictive Power Score</span>
+              </button>
+            </span>
+            <div className="hoverable__content menu-description">{Descriptions.pps}</div>
           </li>
           <li className="hoverable">
             <span className="toggler-action">

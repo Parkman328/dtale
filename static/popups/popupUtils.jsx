@@ -9,6 +9,7 @@ import { CopyRangeToClipboard } from "./CopyRangeToClipboard";
 import { Correlations } from "./Correlations";
 import { Error } from "./ErrorPopup";
 import { Filter } from "./Filter";
+import { PredictivePowerScore } from "./PredictivePowerScore";
 import { RangeHighlight } from "./RangeHighlight";
 import { Rename } from "./Rename";
 import { Upload } from "./Upload";
@@ -54,6 +55,17 @@ function buildCorrelations(props) {
     </React.Fragment>
   );
   const body = <Correlations propagateState={props.propagateState} />;
+  return { title, body };
+}
+
+function buildPps(props) {
+  const title = (
+    <React.Fragment>
+      <i className="ico-bubble-chart" />
+      <strong>Predictive Power Score</strong>
+    </React.Fragment>
+  );
+  const body = <PredictivePowerScore propagateState={props.propagateState} />;
   return { title, body };
 }
 
@@ -281,6 +293,7 @@ const POPUP_MAP = {
   filter: buildFilter,
   "column-analysis": buildColumnAnalysis,
   correlations: buildCorrelations,
+  pps: buildPps,
   build: buildCreateColumn,
   "type-conversion": buildTypeConversion,
   cleaners: buildCleaners,

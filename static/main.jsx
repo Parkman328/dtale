@@ -10,6 +10,7 @@ import { CodeExport } from "./popups/CodeExport";
 import { CodePopup } from "./popups/CodePopup";
 import { Correlations } from "./popups/Correlations";
 import { ReactFilter as Filter } from "./popups/Filter";
+import { PredictivePowerScore } from "./popups/PredictivePowerScore";
 import { ReactUpload as Upload } from "./popups/Upload";
 import { ReactColumnAnalysis as ColumnAnalysis } from "./popups/analysis/ColumnAnalysis";
 import { ReactCreateColumn as CreateColumn } from "./popups/create/CreateColumn";
@@ -44,6 +45,9 @@ if (_.startsWith(pathname, "/dtale/popup")) {
       break;
     case "correlations":
       rootNode = <Correlations {...{ dataId, chartData }} />;
+      break;
+    case "pps":
+      rootNode = <PredictivePowerScore {...{ dataId, chartData }} />;
       break;
     case "describe":
       rootNode = <Describe {...{ dataId, chartData }} />;
